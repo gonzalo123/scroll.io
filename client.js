@@ -26,4 +26,4 @@ socket.on('scrollTo', function (data) {
     window.scrollTo(0, y);
 
 });
-document.write('<img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://192.168.2.3:8000/panel/' + key + '&choe=UTF-8" alt=""/>');
+document.write('<a href="http://192.168.2.3:8000/panel/' + key + '"><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://192.168.2.3:8000/panel/' + key + '&choe=UTF-8" alt=""/></a>');
