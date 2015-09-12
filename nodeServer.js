@@ -1,7 +1,15 @@
 var io = require('socket.io').listen(8080);
+io.set('origins', '*:*');
 
-var app = require('express').createServer();
+var app = require("express")();
 app.set('view engine', 'jade');
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-requested-with ");
+  next();
+});
 
 app.set('view options', {
     layout:false
